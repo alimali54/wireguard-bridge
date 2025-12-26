@@ -1,4 +1,4 @@
-# WireGuard Bridge for Windows (Transparent Gateway)
+# WireGuard Bridge for Windows
 
 This project enables a Windows PC to function as a **WireGuard Bridge** for other devices on a local network, such as gaming consoles, smart TVs, and mobile devices. It establishes a transparent gateway that routes traffic through a WireGuard tunnel without requiring any software installation on the client devices.
 
