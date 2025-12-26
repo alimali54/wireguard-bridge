@@ -43,7 +43,7 @@ The project supports two routing modes: **Full Tunnel** and **Whitelist (Split T
 ```
 Example WireGuard config:
 [Interface]
-PrivateKey = CJ2lgACYDNP4yuq4l4jYzZ+CujUp29nDUP94jKvzW1Q=
+PrivateKey = DJ2lgACYDNP4yuq4l4jYzZ+CujUp29nDUP94jKvzW1Q=
 Address = 10.66.66.3/32,fd42:42:42::3/128
 DNS = 1.1.1.1,1.0.0.1
 
@@ -62,7 +62,7 @@ Corresponding sing-box wireguard-config.json values:
             "mtu": 1280,
             "peer_public_key": "U5nGijwylDjUFjuPTNmZe2msJ1O1lWAIBPWVt9+DThg=",
             "pre_shared_key": "RnjXOSa63DmYouhszG3ts0Ihpn2eEr4HUU7a7Pz/pNE=",
-            "private_key": "CJ2lgACYDNP4yuq4l4jYzZ+CujUp29nDUP94jKvzW1Q=",
+            "private_key": "DJ2lgACYDNP4yuq4l4jYzZ+CujUp29nDUP94jKvzW1Q=",
             "server": "141.11.109.242",
             "server_port": 49875,
             "system_interface": false,
