@@ -118,9 +118,3 @@ For routine use, utilize the VBScript files located in the root directory:
 * **`run-all.vbs`**: Launches all services with visible terminal windows.
 * **`run-all-silent.vbs`**: Launches all services in the background (hidden mode).
 * **`stop-all.vbs`**: Terminates all associated processes (`nekobox_core.exe`, `dnscrypt-proxy.exe`, `go-pcap2socks.exe`).
-
----
-├── README.md
-├── run-all.vbs
-├── run-all-silent.vbs
-└── stop-all.vbs: Primary automation script for background operation.
