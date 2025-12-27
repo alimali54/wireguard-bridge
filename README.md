@@ -118,3 +118,14 @@ For routine use, utilize the VBScript files located in the root directory:
 * **`run-all.vbs`**: Launches all services with visible terminal windows.
 * **`run-all-silent.vbs`**: Launches all services in the background (hidden mode).
 * **`stop-all.vbs`**: Terminates all associated processes (`nekobox_core.exe`, `dnscrypt-proxy.exe`, `go-pcap2socks.exe`).
+
+
+---
+
+## Credits
+
+This project integrates several open-source tools to provide a complete gateway solution. Special thanks to the following projects:
+
+* **[nekoray (nekobox_core)](https://github.com/MatsuriDayo/nekoray):** For providing the powerful sing-box core used for WireGuard tunneling.
+* **[go-pcap2socks](https://github.com/DaniilSokolyuk/go-pcap2socks):** For the efficient packet capturing and SOCKS5 routing engine.
+* **[dnscrypt-proxy](https://github.com/DNSCrypt/dnscrypt-proxy):** For the secure and encrypted DNS resolution service.
