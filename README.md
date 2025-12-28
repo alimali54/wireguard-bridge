@@ -122,6 +122,18 @@ For routine use, utilize the VBScript files located in the root directory:
 
 ---
 
+## Troubleshooting: PlayStation Network (PSN) Issues
+
+If your device has internet access but fails to connect to **PlayStation Network (PSN)**, it is likely due to a DNS conflict. To resolve this:
+
+1. **Modify go-pcap2socks Config:** Change the DNS address from `127.0.0.1:53` to `local` in your configuration.
+2. **Use Cloudflare DNS:** * Install the Cloudflare WARP client on your PC.
+   * Switch the mode to **"1.1.1.1" (DNS only)**. Do **NOT** enable the "WARP" tunnel feature.
+3. **Disable dnscrypt-proxy:** With this configuration, you **do not** need to run `dnscrypt-proxy.exe`. You can leave it closed.
+4. **Result:** This allows the bridge to use your system's local DNS resolver (Cloudflare DoH), which is generally more stable for PSN services while avoiding the overhead of an extra DNS proxy.
+
+---
+
 ## Credits
 
 This project integrates several open-source tools to provide a complete gateway solution. Special thanks to the following projects:
