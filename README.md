@@ -93,8 +93,7 @@ It is recommended to verify each component individually before using automation 
 
 1. **Start sing-box:** Execute `sing-box/run_config.cmd`. This initiates the WireGuard tunnel and provides a SOCKS5 proxy at `127.0.0.1:2080`.
    * *Validation:* Configure a browser extension (e.g., FoxyProxy) to use SOCKS5 at `127.0.0.1:2080` and verify connectivity.
-2. **Start DNS:** Execute `dnscrypt-proxy/dnscrypt-proxy.exe`.
-3. **Start Gateway:** Execute `go-pcap2socks/go-pcap2socks.exe`. This process bridges the local network traffic to the proxy.
+2. **Start Gateway:** Execute `go-pcap2socks/go-pcap2socks.exe`. This process bridges the local network traffic to the proxy.
 
 ---
 
@@ -107,7 +106,7 @@ Configure the network settings of the target device (Console, TV, etc.) manually
 | **IP Address** | `172.24.2.2-255` (e.g., `172.24.2.5`) |
 | **Gateway** | `172.24.2.1` |
 | **Subnet Mask** | `255.255.0.0` |
-| **DNS** | `1.1.1.1` (Note: `go-pcap2socks` will override this to use `dnscrypt-proxy` internally). |
+| **DNS** | `1.1.1.1` (does not matter. the DNS will be Cloudflare DoH eventually which is written in wireguard-config file). |
 
 ---
 
@@ -117,20 +116,7 @@ For routine use, utilize the VBScript files located in the root directory:
 
 * **`run-all.vbs`**: Launches all services with visible terminal windows.
 * **`run-all-silent.vbs`**: Launches all services in the background (hidden mode).
-* **`stop-all.vbs`**: Terminates all associated processes (`nekobox_core.exe`, `dnscrypt-proxy.exe`, `go-pcap2socks.exe`).
-
-
----
-
-## Troubleshooting: PlayStation Network (PSN) Issues
-
-If your device has internet access but fails to connect to **PlayStation Network (PSN)**, it is likely due to a DNS conflict. To resolve this:
-
-1. **Modify go-pcap2socks Config:** Change the DNS address from `127.0.0.1:53` to `local` in your configuration.
-2. **Use Cloudflare DNS:** * Install the Cloudflare WARP client on your PC.
-   * Switch the mode to **"1.1.1.1" (DNS only)**. Do **NOT** enable the "WARP" tunnel feature.
-3. **Disable dnscrypt-proxy:** With this configuration, you **do not** need to run `dnscrypt-proxy.exe`. You can leave it closed.
-4. **Result:** This allows the bridge to use your system's local DNS resolver (Cloudflare DoH), which is generally more stable for PSN services while avoiding the overhead of an extra DNS proxy.
+* **`stop-all.vbs`**: Terminates all associated processes (`nekobox_core.exe`, `go-pcap2socks.exe`).
 
 ---
 
@@ -140,4 +126,3 @@ This project integrates several open-source tools to provide a complete gateway 
 
 * **[nekoray (nekobox_core)](https://github.com/MatsuriDayo/nekoray):** For providing the powerful sing-box core used for WireGuard tunneling.
 * **[go-pcap2socks](https://github.com/DaniilSokolyuk/go-pcap2socks):** For the efficient packet capturing and SOCKS5 routing engine.
-* **[dnscrypt-proxy](https://github.com/DNSCrypt/dnscrypt-proxy):** For the secure and encrypted DNS resolution service.
